@@ -2,7 +2,7 @@
 import os
 
 # importing load_dotenv function from dotenv module
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 load_dotenv()
 
 # Getting and printing API key
