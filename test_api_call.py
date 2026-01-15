@@ -6,7 +6,9 @@ load_dotenv()
 # The client gets the API key from the environment variable `GEMINI_API_KEY`.
 client = genai.Client()
 
+# Model generates a response
 response = client.models.generate_content(
-    model="gemini-2.5-flash", contents="How does AI works?"
+    model="gemini-2.5-flash", 
+    contents="How does AI works?"
 )
 print(response.text)
