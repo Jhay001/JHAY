@@ -8,7 +8,7 @@ client = genai.Client()
 
 # Model generates a response
 response = client.models.generate_content(
-    model="gemini-2.5-flash", 
-    contents="How does AI works?"
+    model="gemini-3-pro-preview", 
+    contents="Give me a warm welcome to using you"
 )
 print(response.text)
