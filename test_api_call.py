@@ -9,6 +9,6 @@ client = genai.Client()
 # Model generates a response
 response = client.models.generate_content(
     model="gemini-3-flash-preview", 
-    contents="Give me a warm welcome to using you"
+    contents="Give me a warm welcome back to using you"
 )
 print(response.text)
