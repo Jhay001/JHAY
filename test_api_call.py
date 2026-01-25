@@ -17,7 +17,7 @@ api_key = os.getenv("GEMINI_API_KEY")
 print(f"API_KEY: {api_key}")
 
 # Importing the genai module
-import genai
+from google import genai
 
 # Initializing the genai client
 client = genai.Client()
@@ -28,4 +28,5 @@ response = client.models.generate_content (
     contents="Give me a warm welcome back to using you"
 )
 
+# Printing the response
 print(response.text)
