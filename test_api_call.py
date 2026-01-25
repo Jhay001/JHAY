@@ -1,14 +1,31 @@
+# Importing the os module
+# This module is for interacting with the OS
 import os
+
+# Importing load_dotenv function from dotenv module
+# This function loads env variables from a .env file
 from dotenv import load_dotenv # type: ignore
-from google import genai
+
+# Using the function
 load_dotenv()
 
-# The client gets the API key from the environment variable `GEMINI_API_KEY`.
+# Getting and printing API key
+# This uses the os module to get the API key
+api_key = os.getenv("GEMINI_API_KEY")
+
+# Printing the API key to verify it's loaded
+print(f"API_KEY: {api_key}")
+
+# Importing the genai module
+import genai
+
+# Initializing the genai client
 client = genai.Client()
 
-# Model generates a response
-response = client.models.generate_content(
-    model="gemini-3-flash-preview", 
+# Making an API call to generate content
+response = client.models.generate_content (
+    model="gemini-3-flash-preview",
     contents="Give me a warm welcome back to using you"
 )
+
 print(response.text)
