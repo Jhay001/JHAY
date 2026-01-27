@@ -22,6 +22,10 @@ client = genai.Client()
 # Making an API call to generate content
 response = client.models.generate_content (
     model="gemini-3-flash-preview", #Indicating model to use
+    # Adding System Instruction
+    config=types.GenerateContentConfig(
+        system_instruction="You are an Expert that Specializes in Computer Science"
+    ),
     #Adding User Prompt
     contents="Give me a warm welcome back to using you"
 )
