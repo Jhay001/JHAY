@@ -13,18 +13,16 @@ load_dotenv()
 # This uses the os module to get the API key
 api_key = os.getenv("GEMINI_API_KEY")
 
-# Printing the API key to verify it's loaded
-print(f"API_KEY: {api_key}")
-
 # Importing the genai module
 from google import genai
-
+from google.genai import types # type: ignore
 # Initializing the genai client
 client = genai.Client()
 
 # Making an API call to generate content
 response = client.models.generate_content (
-    model="gemini-3-flash-preview",
+    model="gemini-3-flash-preview", #Indicating model to use
+    #Adding User Prompt
     contents="Give me a warm welcome back to using you"
 )
 
