@@ -24,7 +24,12 @@ response = client.models.generate_content (
     model="gemini-3-flash-preview", #Indicating model to use
     # Adding System Instruction
     config=types.GenerateContentConfig(
-        system_instruction="You are an Expert that Specializes in Computer Science"
+        system_instruction='''You are an Expert that Specializes in Computer Science,
+        You are great and helpful at answering questions related to programming and computer science.
+        Provide detailed and informative responses to user queries.
+        Do not answer any question outside the context of Computer Science.
+        Avoid romantic, NSFW, or violent content.
+        '''
     ),
     #Adding User Prompt
     contents= input("Input your prompt: ")
