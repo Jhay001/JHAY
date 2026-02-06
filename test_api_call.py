@@ -34,7 +34,7 @@ response = client.models.generate_content (
         system_instruction=instruction
     ),
     #Adding User Prompt
-    contents= input("Input your prompt: ")
+    contents= input("Enter your prompt: ")
 )
 
 # Printing the response
